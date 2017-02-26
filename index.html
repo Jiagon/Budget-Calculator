@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src = "css/calendar.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="calc.js"></script>
+  	
+</head>
+<body>
+
+<div class="moneyInput">
+    
+<h2>Budget Calculator: </h2>
+        <input id="moneyField" type= "text" size="25" maxlength="25" onfocus="if(this.value == value) { this.value = ''; }"  value="Enter monthly income">
+        <button type="button" id="calcButton">Calc</button>
+        <br/>
+        <br/>
+        
+        
+       <input type = "text" id = "addLabelText" onfocus="if(this.value == value) { this.value = ''; }"  value="Add a category">
+    
+        <select size = 4 name = "labels" id = "labels">
+               <option selected>Food</option>
+               <option>Bills</option>
+               <option>Gas</option>
+               <option>Savings</option>
+        </select>
+
+       <button type = "button" id = "addLabelButton">Add</button>
+       <button type = "button" id = "removeLabelButton" onclick = "removeLabel()">Remove</button>
+        
+        
+        <div id = "ranges">
+            <span>
+                <label for="foodLabel">Food</label>
+            </span>
+            <input type = "range" id="foodRange" value = "25">
+            <span class= "percentage" id = "foodExpenses">25%</span>
+            <br />
+            <br />
+            
+            <span>
+                <label for="billsLabel">Bills</label>
+            </span>
+            <input type = "range" id="billsRange" value = "25">
+            <span class= "percentage" id = "billsExpenses">25%</span>
+            <br />
+            <br />
+            
+            <span>
+                <label for="savingsLabel">Savings</label>
+            </span>
+            <input type = "range" id="savingsRange" value = "25">
+            <span class= "percentage" id = "savingsExpenses">25%</span>
+            <br />
+            <br />
+            
+            <span>
+                <label for="gasLabel">Gas</label>
+            </span>
+            <input type = "range" id="gasRange" value = "25">
+            <span class= "percentage" id = "gasExpenses">25%</span>
+        </div>
+    <br/>
+
+        <div id="results"></div>  
+</div>
+<div class="calendar">
+		<div class="month">
+		<ul>
+			<li class="prev">&#10094;</li>
+			<li class="next">&#10095;</li>
+			<li style="text-align:center">February<br><span style="font-size:18px">2017</span>
+			</li>
+		</ul>
+	</div>
+
+	<ul class="weekdays">
+		<li>Sun</li>
+		<li>Mon</li>
+		<li>Tue</li>
+		<li>Wed</li>
+		<li>Thu</li>
+		<li>Fri</li>
+		<li>Sat</li>
+	</ul>
+
+	<ul class="days">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+		<li>12</li>
+		<li>13</li>
+		<li>14</li>
+		<li>15</li>
+		<li>16</li>
+		<li>17</li>
+		<li>18</li>
+		<li>19</li>
+		<li>20</li>
+		<li>21</li>
+		<li>22</li>
+		<li>23</li>
+		<li>24</li>
+		<li>25</li>
+		<li><span class="active">26</span></li>
+		<li>27</li>
+		<li>28</li>
+
+	</ul>
+</div>
+    
+<div class="Days-Weeks-List">
+	<button class="Days-Button">Days</button>
+	<button class="Weeks-Button">Weeks</button>
+	<div class="Days-List">
+		<div id="that-days-list" style="overflow-y: scroll; height:400px;">	
+			<ul class="Days">
+				<li class="Day1"><button>1</button></li>
+				<li class="Day2"><button>2</button></li>
+				<li class="Day3"><button>3</button></li>
+				<li class="Day4"><button>4</button></li>
+				<li class="Day5"><button>5</button></li>
+				<li class="Day6"><button>6</button></li>
+				<li class="Day7"><button>7</button></li>
+				<li class="Day8"><button>8</button></li>
+				<li class="Day9"><button>9</button></li>
+				<li class="Day10"><button>10</button></li>
+				<li class="Day11"><button>11</button></li>
+				<li class="Day12"><button>12</button></li>
+				<li class="Day13"><button>13</button></li>
+				<li class="Day14"><button>14</button></li>
+				<li class="Day15"><button>15</button></li>
+				<li class="Day16"><button>16</button></li>
+				<li class="Day17"><button>17</button></li>
+				<li class="Day18"><button>18</button></li>
+				<li class="Day19"><button>19</button></li>
+				<li class="Day20"><button>20</button></li>
+				<li class="Day21"><button>21</button></li>
+				<li class="Day22"><button>22</button></li>
+				<li class="Day23"><button>23</button></li>
+				<li class="Day24"><button>24</button></li>
+				<li class="Day25"><button>25</button></li>
+				<li class="Day26"><span class="active"><button>26</button></span></li>
+				<li class="Day27"><button>27</button></li>
+				<li class="Day28"><button>28</button></li>
+			</ul>
+		</div>
+	</div>
+		<div class="Weeks-List" id = "that-weeks-list">
+            <ul class="Weeks">
+                <li class="Week1"><button>Week 1</button></li>
+                <li class="Week2"><button>Week 2</button></li>
+                <li class="Week3"><button>Week 3</button></li>
+                <li class="Week4"><button>Week 4</button></li>
+                <li class="Week5"><button><span class="active">Week 5</span></button></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script src = "click.js"></script>
+</html>

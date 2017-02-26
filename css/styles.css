@@ -1,0 +1,324 @@
+*{
+	box-sizing:border-box;
+}
+
+ul{
+	list-style-type:none;
+}
+
+body{
+	font-family:Verdana, sans-serif;
+    position: relative;
+    margin: 0 auto;
+}
+
+#calcButton{
+    padding: 0pt 10pt;
+}
+
+.moneyInput{
+    float: left;
+    padding: 0pt 10pt;
+}
+
+#labels{
+    width: 60pt;
+}
+
+#addLabelText{
+    float: left;
+    margin-right: .7em;
+}
+
+#addLabelButton, #removeLabelButton{
+    float: left;
+    margin-top: 2.5em;
+    
+}
+
+#addLabelButton{
+    margin-left: -12.6em;
+}
+
+
+#ranges .percentage{
+    float: right;
+}
+
+#ranges input{
+    float: right;
+}
+
+#removeLabelButton{
+    margin-left: -8.6em;
+}
+
+#results{
+    margin-top: 0em;
+    float: right;
+}
+
+.Weeks-Button{
+	background-color:black;
+	border:none;
+	color:white;
+	padding: 15px 3px;
+	text-align: center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:20px;
+    width:109.5px;
+}
+
+.Weeks-Button:hover{
+	background-color:#404040;
+	color:white;
+}
+
+.Days-Button{
+	background-color:black;
+	border:none;
+	color:white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:20px;
+    margin-right: 0pt; 
+}
+
+.Days-Button:hover{
+	background-color:#404040;
+	color:white;
+}
+
+/* Calendar */
+.calendar{
+	width:500px;
+}
+
+/* Month Header */
+.month{
+	padding:20px 25px;
+	width:100%;
+	background:black;
+}
+
+/* Month List */
+.month ul{
+	margin:0;
+	padding:0;
+}
+
+.month ul li{
+	color:white;
+	font-size:20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+/* Prev button */
+.month .prev {
+	float: left;
+	padding-top:10px;
+	padding-left:35px;
+}
+
+/* Next button */
+.month .next {
+	float: right;
+	padding-top:10px;
+	padding-right:35px;
+}
+
+/* Weekdays */
+.weekdays {
+	margin:0;
+	padding:10px;
+	background-color:black;
+}
+
+.weekdays li{
+	display: inline-block;
+	width:13%;
+	color:white;
+	text-align: center;
+}
+
+/* Days */
+.days {
+	padding:5px;
+	background: #4169e1;
+	margin:0;
+}
+
+.days li{
+	list-style-type:none;
+	display:inline-block;
+	width:63px;
+	height:50px;
+	text-align:center;
+	font-size:14px;
+	color:white;
+	border-radius:50%;
+	padding:5px;
+	transition: all 0.3s ease 0s;
+}
+
+/* Today */
+.days li .active {
+	padding: 5px;
+	background:#ff4444;
+	color:white;
+	border-radius:50%;
+}
+
+.days li:hover{
+	background:#ff4444;
+	background-image:20%;
+
+	border-radius:50%;
+
+}
+
+.days li .active:hover{
+	background:#404040;
+}
+
+.calendar, .Days-Weeks-List{
+	/*display:inline-block;*/
+	float: left;
+}
+
+
+}
+/* Add -- when clicked month's day, color:000080; */
+
+#that-days-list{
+	width:150px;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto; 
+	height:300px; 
+	margin:0px;
+}
+
+/* title - Days & Weeks box*/
+.title{
+	background-color:black;
+	border:none;
+	color:white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration:none;
+	/*display:inline-block;*/
+	font-size:20px;
+}
+
+.title:hover{
+	background-color:#404040;
+	color:white;
+}
+
+.title {
+	display:flex;
+	flex-direction: row;
+}
+
+#that-days-list{
+	display:none;
+}
+
+#that-weeks-list{
+	display:none;
+}
+
+/* DAYS */
+ul.Days{
+	list-style: none;
+	padding:0px;
+}
+
+.Days li{
+	background-color:black;
+	border:none;
+	color:white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration:none;
+	/*display:inline-block;*/
+	font-size:20px;	
+}
+
+.Days li:hover{
+	background-color:#ff4444;
+}
+
+.Days{
+	background-color:#4169e1;
+}
+
+.Days{
+	list-style:none;
+	border: 1px black solid;
+}
+
+.Days button{
+	background-color:#ff4444;
+	border:none;
+	color:white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration:none;
+	/*display:inline-block;*/
+	font-size:20px;	
+}
+
+.Days button:hover{
+	background-color:#ff4444;
+}
+
+/* WEEK*/
+ul.Weeks{
+	list-style: none;
+	padding:0px;
+}
+
+.Weeks li{
+	background-color:black;
+	border:none;
+	color:white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration:none;
+	/*display:inline-block;*/
+	font-size:20px;	
+}
+
+.Weeks li:hover{
+	background-color:#ff4444;
+}
+
+.Weeks{
+	background-color:#4169e1;
+}
+
+.Weeks{
+	list-style:none;
+	border: 1px black solid;
+}
+
+.Weeks button{
+	background-color:black;
+	border:none;
+	color:white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration:none;
+	/*display:inline-block;*/
+	font-size:20px;	
+}
+
+.Weeks button:hover{
+	background-color:#ff4444;
+}
